@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextBtn = document.querySelector(".carousel-btn.next");
   const prevBtn = document.querySelector(".carousel-btn.prev");
   const dotsContainer = document.querySelector(".carousel-dots");
+  const form = document.getElementById("contact-form");
+  const result = document.getElementById("form-result");
 
   // If no carousel elements found, exit
   if (!track || !nextBtn || !prevBtn) return;
@@ -121,6 +123,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize carousel
   initCarousel();
+
+  if (form && result) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
+
+        if (response.ok) {
+          result.style.display = "block";
+          result.style.color = "green";
+          result.innerText =
+            "✅ Thank you! Your message has been sent successfully.";
+          form.reset();
+        } else {
+          result.style.display = "block";
+          result.style.color = "red";
+          result.innerText =
+            "⚠️ Oops! Something went wrong. Please try again later.";
+        }
+      } catch (error) {
+        result.style.display = "block";
+        result.style.color = "red";
+        result.innerText =
+          "⚠️ Network error. Please check your connection and try again.";
+      }
+    });
+  }
 });
 
 // Rest of your existing code for nav toggle and copyright year...

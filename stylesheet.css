@@ -282,6 +282,13 @@ body {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
 }
 
 .card-link {
@@ -296,6 +303,11 @@ body {
   height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.05);
 }
 
 .card-body {
@@ -310,6 +322,25 @@ body {
 .meta {
   color: #666;
   font-size: 0.95rem;
+}
+
+.price {
+  margin-top: 0.5rem;
+  font-size: 1.2rem; /* bigger than meta */
+  font-weight: bold;
+}
+
+.price .was {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.price .now {
+  color: #228b22; /* red for emphasis */
+  font-size: 1.3rem;
 }
 
 /* Google Maps Embed*/
@@ -343,6 +374,53 @@ iframe {
   border-radius: 6px;
 }
 
+/* About Team*/
+.team {
+  padding: 2rem 0;
+}
+
+.team h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.team .lead {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.team-member-info {
+  text-align: center;
+}
+
+.team-member-info h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.5rem;
+}
+
+.team-member-info .role {
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.team-member-photo img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 /* Footer */
 .site-footer {
   padding: 1rem 0;
@@ -352,8 +430,56 @@ iframe {
   color: #666;
 }
 
+/* Tablet adjustments */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  /* Hero section */
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-ctas {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  /* Inventory cards grid */
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-body {
+    padding: 0.75rem;
+  }
+
+  /* Contact grid */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+
+  /* Navigation tweaks */
+  .nav-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .nav-list li {
+    margin-left: 0.5rem;
+  }
+
+  .nav-list li a {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
 /* Larger screens */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 901px) {
   .hero h1 {
     font-size: 2rem;
   }
@@ -400,5 +526,20 @@ iframe {
 
   .contact-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .team-member {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .team-member-info {
+    flex: 1;
+  }
+
+  .team-member-photo img {
+    max-width: 200px;
   }
 }

@@ -50,10 +50,12 @@
             Menu
           </button>
           <ul id="nav-list" class="nav-list">
-            <li><a href="#hero">Welcome to Auto Queen Motors</a></li>
-            <li><a href="#inventory">Inventory</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#Detailing">Attention to Detailing</a></li>
+            <li><a href="index.html">Welcome to Auto Queen Motors</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="about-us.html">About</a></li>
+            <li>
+              <a href="attention-to-detailing.html">Attention to Detailing</a>
+            </li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -62,33 +64,6 @@
     </header>
 
     <main id="main">
-      <section id="inventory" class="inventory container">
-        <h2 class="section-title">Featured Inventory</h2>
-        <p>
-          Explore our latest vehicles. We specialize in affordable, reliable
-          cars, trucks, and SUVs.
-        </p>
-        <div class="cards">
-          <!-- Inventory card: ideally rendered from CMS -->
-          <article class="card" aria-labelledby="car1-title">
-            <a class="card-link" href="/inventory/vehicle-1">
-              <img
-                class="card-img"
-                src="images/car-1-480.webp"
-                srcset="images/car-1-480.webp 480w, images/car-1-800.webp 800w"
-                sizes="(max-width:600px) 100vw, 33vw"
-                alt="2015 Toyota Camry"
-              />
-              <div class="card-body">
-                <h3 id="car1-title" class="card-title">2015 Toyota Camry</h3>
-                <p class="meta">125,000 km • Automatic • $10,995</p>
-              </div>
-            </a>
-          </article>
-          <!--Duplicate cards here-->
-        </div>
-      </section>
-
       <section id="contact" class="contact container">
         <h2 class="section-title">Contact & Visit</h2>
         <div class="contact-grid">
@@ -108,11 +83,31 @@
           </address>
           <form
             class="contact-form"
-            action="/contact-form-endpoint"
+            action="https://api.web3forms.com/submit"
             method="post"
             aria-label="Contact form"
             autocomplete="on"
           >
+            <input
+              type="hidden"
+              name="access_key"
+              value="36ab05d9-791c-478d-89d1-d3ecedffb8be"
+            />
+            <!--spam protection-->
+            <input
+              type="text"
+              name="company"
+              style="display: none"
+              tabindex="-1"
+              autocomplete="off"
+            />
+            <input
+              type="checkbox"
+              name="botcheck"
+              class="hidden"
+              style="display: none"
+            />
+
             <label>
               <span>Name</span>
               <input type="text" name="name" autocomplete="name" required />
@@ -134,8 +129,17 @@
                 required
               ></textarea>
             </label>
+
+            <!--- Optional hidden fields -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="New contact from Auto Queen Motors website"
+            />
+
             <button class="btn primary" type="submit">Send Message</button>
           </form>
+          <div id="form-result" style="display: none; margin-top: 1rem"></div>
         </div>
       </section>
     </main>

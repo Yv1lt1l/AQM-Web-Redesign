@@ -51,8 +51,10 @@
           <ul id="nav-list" class="nav-list">
             <li><a href="index.html">Welcome to Auto Queen Motors</a></li>
             <li><a href="inventory.html">Inventory</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#Detailing">Attention to Detailing</a></li>
+            <li><a href="about-us.html">About</a></li>
+            <li>
+              <a href="attention-to-detailing.html">Attention to Detailing</a>
+            </li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -97,7 +99,7 @@
             <a class="btn primary" href="inventory.html"
               >Browse Full Inventory</a
             >
-            <a class="btn ghost" href="#contact">Contact Us</a>
+            <a class="btn ghost" href="contact.html">Contact Us</a>
           </div>
         </div>
       </section>
@@ -153,7 +155,7 @@
           <a class="btn primary" href="inventory.html">Full Inventory here!</a>
         </p>
         <div class="cards">
-          <!-- Inventory card: ideally rendered from CMS -->
+          <!-- Inventory card: -->
           <article class="card" aria-labelledby="car1-title">
             <a class="card-link" href="/inventory/vehicle-1">
               <img
@@ -163,12 +165,16 @@
               />
               <div class="card-body">
                 <h3 id="car1-title" class="card-title">2009 Buick Allure CX</h3>
-                <p class="meta">125,000 km • Automatic • $7,995</p>
+                <p class="meta">125,000 km • Automatic</p>
+                <p class="price">
+                  <span class="was">Was $8,995</span>
+                  <span class="now">Now $7,995</span>
+                </p>
               </div>
             </a>
           </article>
           <!--Duplicate cards here-->
-          <article class="card" aria-labelledby="car1-title">
+          <article class="card" aria-labelledby="car2-title">
             <a class="card-link" href="/inventory/vehicle-1">
               <img
                 class="card-img"
@@ -179,11 +185,15 @@
                 <h3 id="car2-title" class="card-title">
                   2025 Weberlane 5×8 Utility Trailer ( EC860 )
                 </h3>
-                <p class="meta">125,000 km • Automatic • $10,995</p>
+                <p class="meta">125,000 km • Automatic</p>
+                <p class="price">
+                  <span class="was">Was $3,750</span>
+                  <span class="now">Now $2,750</span>
+                </p>
               </div>
             </a>
           </article>
-          <article class="card" aria-labelledby="car1-title">
+          <article class="card" aria-labelledby="car3-title">
             <a class="card-link" href="/inventory/vehicle-1">
               <img
                 class="card-img"
@@ -192,7 +202,11 @@
               />
               <div class="card-body">
                 <h3 id="car3-title" class="card-title">2011 Nissan Juke</h3>
-                <p class="meta">125,000 km • Automatic • $10,995</p>
+                <p class="meta">125,000 km • Automatic</p>
+                <p class="price">
+                  <span class="was">Was $7,995</span>
+                  <span class="now">Now $6,995</span>
+                </p>
               </div>
             </a>
           </article>
@@ -218,11 +232,31 @@
           </address>
           <form
             class="contact-form"
-            action="/contact-form-endpoint"
+            action="https://api.web3forms.com/submit"
             method="post"
             aria-label="Contact form"
             autocomplete="on"
           >
+            <input
+              type="hidden"
+              name="access_key"
+              value="36ab05d9-791c-478d-89d1-d3ecedffb8be"
+            />
+            <!--spam protection-->
+            <input
+              type="text"
+              name="company"
+              style="display: none"
+              tabindex="-1"
+              autocomplete="off"
+            />
+            <input
+              type="checkbox"
+              name="botcheck"
+              class="hidden"
+              style="display: none"
+            />
+
             <label>
               <span>Name</span>
               <input type="text" name="name" autocomplete="name" required />
@@ -244,8 +278,17 @@
                 required
               ></textarea>
             </label>
+
+            <!--- subject line to appear in inbox -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="New contact from Auto Queen Motors website"
+            />
+
             <button class="btn primary" type="submit">Send Message</button>
           </form>
+          <div id="form-result" style="display: none; margin-top: 1rem"></div>
         </div>
       </section>
     </main>
