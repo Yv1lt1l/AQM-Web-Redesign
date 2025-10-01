@@ -430,6 +430,75 @@ iframe {
   color: #666;
 }
 
+/* Vehicle Detail page */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gallery-main img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+}
+
+.gallery-thumbs img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gallery-thumbs img:hover {
+  transform: scale(1.1);
+}
+
+.specs {
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.specs td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.specs td:first-child {
+  font-weight: 600;
+  width: 35%;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+}
+
+.features li::before {
+  content: "✔ ";
+  color: green;
+}
+
+.vehicle-ctas {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
 /* Tablet adjustments */
 @media screen and (min-width: 600px) and (max-width: 900px) {
   /* Hero section */
