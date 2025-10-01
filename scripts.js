@@ -160,13 +160,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  if (mainImage && thumbs.length) {
+  // Thumbnail image switching
+  if (mainImage && thumbs.length > 0) {
+    console.log("Setting up thumbnail click handlers");
+
     thumbs.forEach((thumb) => {
-      thumb.addEventListener("click", () => {
-        mainImage.src = thumb.src;
-        mainImage.alt = thumb.alt;
+      thumb.addEventListener("click", function () {
+        console.log("Changing main image to:", this.src);
+        mainImage.src = this.src;
+        mainImage.alt = this.alt;
+
+        // Optional: Add visual feedback
+        thumbs.forEach((t) => (t.style.opacity = "0.7"));
+        this.style.opacity = "1";
       });
     });
+  } else {
+    console.warn("Could not find main image or thumbnails");
   }
 });
 
