@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const dotsContainer = document.querySelector(".carousel-dots");
   const form = document.getElementById("contact-form");
   const result = document.getElementById("form-result");
-  const mainImage = document.querySelector(".main-image");
+  const mainImage = document.querySelector(".gallery-main .main-image");
   const thumbs = document.querySelectorAll(".gallery-thumbs img");
 
   // If no carousel elements found, exit
@@ -167,6 +167,8 @@ document.addEventListener("DOMContentLoaded", function () {
     thumbs.forEach((thumb) => {
       thumb.addEventListener("click", function () {
         console.log("Changing main image to:", this.src);
+        console.log("Main image element:", mainImage);
+        console.log("Thumbnail elements found:", thumbs.length);
         mainImage.src = this.src;
         mainImage.alt = this.alt;
 
