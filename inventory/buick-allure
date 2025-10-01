@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auto Queen Motors | Nissan Juke</title>
+    <title>Auto Queen Motors | Buick Allure</title>
     <link rel="stylesheet" href="../stylesheet.css" />
     <script src="../scripts.js" defer></script>
     <!-- Favicons (Update with new logo)-->
@@ -64,10 +64,10 @@
     </header>
 
     <main class="main container">
-      <h1>2011 Nissan Juke</h1>
+      <h1>2009 Buick Allure CX</h1>
       <p class="price">
-        <span class="was">Was $7,995</span>
-        <span class="now">Now $6,995</span>
+        <span class="was">Was $8,995</span>
+        <span class="now">Now $7,995</span>
       </p>
 
       <!--Gallery-->
@@ -76,56 +76,56 @@
           <!--main large image to be seen-->
           <img
             class="main-image"
-            src="../images/inventory-card/2011-Nissan-Juke.jpg"
-            alt="2011 Nissan Juke"
+            src="../images/inventory-card/2009-Buick-Allure-CX.jpg"
+            alt="2009-Buick-Allure-CX.jpg"
             loading="lazy"
           />
         </div>
         <div class="gallery-thumbs">
           <!--images from other angles (ex. side view, back view, inside view etc.)-->
           <img
-            src="../images/vehicle/nissan-juke/Nissan-Juke-Front.jpg"
-            alt="Nissan Juke front"
+            src="../images/vehicle/buick-allure/buick-front.jpg"
+            alt="Buick Allure Front"
             loading="lazy"
           />
           <img
-            src="../images/vehicle/nissan-juke/Nissan-Juke-Side.jpg"
-            alt="Nissan Juke Side"
+            src="../images/vehicle/buick-allure/buick-rear.jpg"
+            alt="buick allure rear"
             loading="lazy"
           />
           <img
-            src="../images/vehicle/nissan-juke/Nissan-Juke-Rear.jpg"
-            alt="Nissan Juke Rear"
+            src="../images/vehicle/buick-allure/buikc-side.jpg"
+            alt="buick allure side"
             loading="lazy"
           />
           <img
-            src="../images/vehicle/nissan-juke/Juke-trunk.jpg"
-            alt="Nissan Juke Trunk"
+            src="../images/vehicle/buick-allure/buick-inside.jpg"
+            alt="buick Juke Trunk"
             loading="lazy"
           />
           <img
-            src="../images/vehicle/nissan-juke/juke-inside1.jpg"
-            alt="Nissan Juke inside 1"
+            src="../images/vehicle/buick-allure/buick-inside2.jpg"
+            alt="buick Juke inside 1"
             loading="lazy"
           />
           <img
-            src="../images/vehicle/nissan-juke/juke-inside2.jpg"
-            alt="Nissan Juke inside 2"
+            src="../images/vehicle/buick-allure/buick-inside3.jpg"
+            alt="buick Juke inside 2"
             loading="lazy"
           />
           <img
-            src="../images/vehicle/nissan-juke/juke-inside3.jpg"
-            alt="Nissan Juke inside 3"
+            src="../images/vehicle/buick-allure/buick-inside4.jpg"
+            alt="buick Juke inside 3"
             loading="lazy"
           />
           <img
-            src="../images/vehicle/nissan-juke/juke-inside4.jpg"
-            alt="Nissan Juke inside 4"
+            src="../images/vehicle/buick-allure/buick-inside5.jpg"
+            alt="buick inside 4"
             loading="lazy"
           />
           <img
-            src="../images/vehicle/nissan-juke/juke-inside5.jpg"
-            alt="Juke inside 5"
+            src="../images/vehicle/buick-allure/buick-inside6.jpg"
+            alt="buick inside 6"
             loading="lazy"
           />
           <img
@@ -140,15 +140,15 @@
       <table class="specs">
         <tr>
           <td>Year</td>
-          <td>2011</td>
+          <td>2009</td>
         </tr>
         <tr>
           <td>Engine</td>
-          <td>4-cylinder</td>
+          <td>6-cylinder</td>
         </tr>
         <tr>
           <td>Transmission</td>
-          <td>6-Speed Manual</td>
+          <td>Automatic</td>
         </tr>
         <!--Copy/Paste and edit more rows as needed-->
       </table>
@@ -157,15 +157,13 @@
       <h2>Key Features</h2>
       <ul class="features">
         <li>Heated Front Seats</li>
-        <li>Bluetooth</li>
         <li>Keyless Entry</li>
         <li>Power Windows</li>
-        <li>Power Locks &amp; Mirrors</li>
+        <li>Power Locks &amp; Mirrors &amp; Power Drivers Seat</li>
         <li>A/C</li>
         <li>Cruise control</li>
         <li>CD Player</li>
         <li>Radio with AM &amp; FM</li>
-        <li>Sun Roof</li>
       </ul>
 
       <!--CTAs (Calls to Action)-->
@@ -177,9 +175,10 @@
 
       <!-- Description -->
       <p>
-        Check out this 2011 Nissan Juke! All vehicles come with a safety
-        inspection , Carfax report and a free 3 month, 3,000 km power train
-        warranty. Price does not include a $195 doc fee.
+        This car is in great shape and has very low kms. Very well maintained.
+        All vehicles come with a safety inspection , Carfax report and a free 3
+        month, 3,000 km power train warranty. Price does not include a $195 doc
+        fee.
       </p>
     </main>
     <footer class="site-footer">
