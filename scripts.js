@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const dotsContainer = document.querySelector(".carousel-dots");
   const form = document.getElementById("contact-form");
   const result = document.getElementById("form-result");
-  const mainImage = document.getElementById("main-image");
+  const mainImage = document.querySelector(".main-image");
   const thumbs = document.querySelectorAll(".gallery-thumbs img");
 
   // If no carousel elements found, exit
@@ -123,6 +123,15 @@ document.addEventListener("DOMContentLoaded", function () {
     { passive: true }
   );
 
+  if (mainImage && thumbs.length) {
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        mainImage.src = thumb.src;
+        mainImage.alt = thumb.alt;
+      });
+    });
+  }
+
   // Initialize carousel
   initCarousel();
 
@@ -157,15 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
         result.innerText =
           "⚠️ Network error. Please check your connection and try again.";
       }
-    });
-  }
-
-  if (mainImage && thumbs.length) {
-    thumbs.forEach((thumb) => {
-      thumb.addEventListener("click", () => {
-        mainImage.src = thumb.src;
-        mainImage.alt = thumb.alt;
-      });
     });
   }
 });
