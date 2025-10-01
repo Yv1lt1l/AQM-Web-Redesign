@@ -123,15 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
     { passive: true }
   );
 
-  if (mainImage && thumbs.length) {
-    thumbs.forEach((thumb) => {
-      thumb.addEventListener("click", () => {
-        mainImage.src = thumb.src;
-        mainImage.alt = thumb.alt;
-      });
-    });
-  }
-
   // Initialize carousel
   initCarousel();
 
@@ -166,6 +157,15 @@ document.addEventListener("DOMContentLoaded", function () {
         result.innerText =
           "⚠️ Network error. Please check your connection and try again.";
       }
+    });
+  }
+
+  if (mainImage && thumbs.length) {
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        mainImage.src = thumb.src;
+        mainImage.alt = thumb.alt;
+      });
     });
   }
 });
