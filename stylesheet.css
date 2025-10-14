@@ -498,6 +498,29 @@ iframe {
   flex-wrap: wrap;
 }
 
+.bbb-seal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bbb-seal a {
+  text-decoration: none;
+}
+
+.bbb-seal img {
+  height: 10rem; /* fixed height */
+  width: auto;
+}
+
+.bbb-seal span {
+  display: block;
+  color: #015a75;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
 /* Tablet adjustments */
 @media screen and (min-width: 600px) and (max-width: 900px) {
   /* Hero section */
