@@ -159,18 +159,138 @@ document.addEventListener("DOMContentLoaded", function () {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const mainGalleryImg = document.querySelector(".gallery-main .main-image");
+  const thumbImages = Array.from(
+    document.querySelectorAll(".gallery-thumbs img")
+  );
+  const imageList = thumbImages.map((img) => img.src);
+
+  let currentIndex = 0;
 
   if (lightbox && lightboxImg && mainGalleryImg) {
+    const zoomLevels = [1, 2, 3];
+    let zoomIndex = 0;
+
+    let scale = 1;
+    let posX = 0,
+      posY = 0;
+    let startX = 0,
+      startY = 0;
+    let isDragging = false;
+
+    function updateTransform() {
+      lightboxImg.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+    }
+
+    // ---- SHOW IMAGE (used by arrow keys) ----
+    function showImage(index) {
+      currentIndex = (index + imageList.length) % imageList.length;
+      lightboxImg.src = imageList[currentIndex];
+
+      zoomIndex = 0;
+      scale = zoomLevels[zoomIndex];
+      posX = 0;
+      posY = 0;
+
+      updateTransform();
+    }
+
+    // ---- OPEN LIGHTBOX ----
     mainGalleryImg.addEventListener("click", () => {
-      lightboxImg.src = mainGalleryImg.src;
+      currentIndex = imageList.indexOf(mainGalleryImg.src);
+      showImage(currentIndex);
       lightbox.classList.add("open");
     });
 
-    lightbox.addEventListener("click", () => {
-      lightbox.classList.remove("open");
+    // ---- KEYBOARD CONTROLS ----
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("open")) return;
+
+      switch (e.key) {
+        case "Escape":
+          lightbox.classList.remove("open");
+          break;
+        case "ArrowRight":
+          showImage(currentIndex + 1);
+          break;
+        case "ArrowLeft":
+          showImage(currentIndex - 1);
+          break;
+      }
+    });
+
+    // ---- CLICK OUTSIDE TO CLOSE ----
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("open");
+      }
+    });
+
+    // ---- CLICK IMAGE TO CYCLE ZOOM LEVELS ----
+    lightboxImg.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      zoomIndex = (zoomIndex + 1) % zoomLevels.length;
+      scale = zoomLevels[zoomIndex];
+
+      if (scale === 1) posX = posY = 0;
+      updateTransform();
+    });
+
+    // ---- WHEEL ZOOM ----
+    lightboxImg.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      const delta = e.deltaY < 0 ? 0.15 : -0.15;
+
+      scale = Math.min(4, Math.max(1, scale + delta));
+      updateTransform();
+    });
+
+    // ---- DRAG TO PAN ----
+    lightboxImg.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      startX = e.clientX - posX;
+      startY = e.clientY - posY;
+      lightboxImg.style.cursor = "grabbing";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+
+      posX = e.clientX - startX;
+      posY = e.clientY - startY;
+      updateTransform();
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      lightboxImg.style.cursor = "grab";
+    });
+
+    // ---- PINCH ZOOM ----
+    let lastDistance = 0;
+
+    lightboxImg.addEventListener("touchmove", (e) => {
+      if (e.touches.length !== 2) return;
+
+      e.preventDefault();
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (lastDistance) {
+        const pinchDelta = (distance - lastDistance) / 150;
+        scale = Math.min(4, Math.max(1, scale + pinchDelta));
+        updateTransform();
+      }
+
+      lastDistance = distance;
+    });
+
+    lightboxImg.addEventListener("touchend", () => {
+      lastDistance = 0;
     });
   }
-
   // =========================
   // 5. Nav Toggle + Year
   // =========================

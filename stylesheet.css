@@ -477,6 +477,14 @@ iframe {
   max-height: 90%;
   border-radius: 8px;
   cursor: zoom-out;
+  transform-origin: center center;
+  transition: transform 0.15s ease;
+  touch-action: none;
+  cursor: grab;
+}
+
+.lightbox img:active {
+  cursor: grabbing;
 }
 
 .lightbox.open {
