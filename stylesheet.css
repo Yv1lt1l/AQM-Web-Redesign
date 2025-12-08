@@ -447,15 +447,19 @@ iframe {
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
+  height: 120px;
 }
 
 .gallery-thumbs img {
-  width: 100px;
-  height: auto;
-  object-fit: cover;
+  width: auto;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #f8f8f8;
   border-radius: 4px;
   cursor: pointer;
   transition: transform 0.2s;
+  padding: 2px;
 }
 
 .gallery-thumbs img:hover {
