@@ -196,7 +196,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ---- OPEN LIGHTBOX ----
     mainGalleryImg.addEventListener("click", () => {
-      currentIndex = imageList.indexOf(mainGalleryImg.src);
+      function normalize(url) {
+        const a = document.createElement("a");
+        a.href = url;
+        return a.href;
+      }
+
+      const normalizedMain = normalize(mainGalleryImg.src);
+      const normalizedList = imageList.map((src) => normalize(src));
+
+      currentIndex = normalizedList.indexOf(normalizedMain);
+
+      if (currentIndex === -1) currentIndex = 0;
+
       showImage(currentIndex);
       lightbox.classList.add("open");
     });
