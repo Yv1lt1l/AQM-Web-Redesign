@@ -153,7 +153,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // =========================
-  // 4. Nav Toggle + Year
+  // 4. Lighbox Fullscreen Zoom
+  // =========================
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const mainGalleryImg = document.querySelector(".gallery-main .main-image");
+
+  if (lightbox && lightboxImg && mainGalleryImg) {
+    mainGalleryImg.addEventListener("click", () => {
+      lightboxImg.src = mainGalleryImg.src;
+      lightbox.classList.add("open");
+    });
+
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.remove("open");
+    });
+  }
+
+  // =========================
+  // 5. Nav Toggle + Year
   // =========================
   document.querySelectorAll(".nav-toggle").forEach((btn) => {
     btn.addEventListener("click", () => {

@@ -462,6 +462,27 @@ iframe {
   transform: scale(1.1);
 }
 
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  cursor: zoom-out;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
 .specs {
   margin: 1.5rem 0;
   border-collapse: collapse;
