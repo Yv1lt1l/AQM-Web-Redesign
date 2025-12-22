@@ -443,6 +443,10 @@ iframe {
   border-radius: 8px;
 }
 
+.main-image:hover {
+  cursor: pointer;
+}
+
 .gallery-thumbs {
   display: flex;
   gap: 0.5rem;
