@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
           .querySelectorAll(".dot")
           .forEach((dot) => dot.classList.remove("active"));
         const activeDot = dotsContainer.querySelector(
-          `.dot[data-index="${index}"]`
+          `.dot[data-index="${index}"]`,
         );
         if (activeDot) activeDot.classList.add("active");
       }
@@ -99,6 +99,39 @@ document.addEventListener("DOMContentLoaded", function () {
   // =========================
   const form = document.getElementById("contact-form");
   const result = document.getElementById("form-result");
+  const vehicleSelect = document.getElementById("vehicle-select");
+
+  if (vehicleSelect) {
+    fetch("inventory.html")
+      .then((response) => response.text())
+      .then((html) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        const vehicles = doc.querySelectorAll("#inventory-cards .card-title");
+
+        vehicleSelect.innerHTML = '<option value=""> Select a vehicle</option>';
+
+        vehicles.forEach((vehicle) => {
+          const option = document.createElement("option");
+          option.value = vehicle.textContent.trim();
+          option.textContent = vehicle.textContent.trim();
+          vehicleSelect.appendChild(option);
+        });
+
+        //auto select if URL has ?vehicle= parameter
+        const params = new URLSearchParams(window.location.search);
+        const selectedVehicle = params.get("vehicle");
+
+        if (selectedVehicle) {
+          vehicleSelect.value = selectedVehicle;
+        }
+      })
+
+      .catch(() => {
+        vehicleSelect.innerHTML =
+          '<option value=""> Unable to load vehicles</option>';
+      });
+  }
 
   if (form && result) {
     form.addEventListener("submit", async (e) => {
@@ -160,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const lightboxImg = document.getElementById("lightbox-img");
   const mainGalleryImg = document.querySelector(".gallery-main .main-image");
   const thumbImages = Array.from(
-    document.querySelectorAll(".gallery-thumbs img")
+    document.querySelectorAll(".gallery-thumbs img"),
   );
   const imageList = thumbImages.map((img) => img.src);
 
