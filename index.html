@@ -9,7 +9,7 @@
     default-src 'self';
     img-src 'self' data: https://*.googleapis.com https://*.gstatic.com https://m.bbb.org;
     script-src 'self';
-    style-src 'self' https://*.googleapis.com;
+    style-src 'self' 'unsfae-inline' https://*.googleapis.com;
     font-src 'self' https://*.gstatic.com;
     frame-src https://www.google.com https://maps.google.com;
     form-action 'self' https://api.web3forms.com;"
@@ -448,7 +448,7 @@
 
             <button class="btn primary" type="submit">Send Message</button>
           </form>
-          <div id="form-result"></div>
+          <div id="form-result" style="display: none; margin-top: 1rem"></div>
         </div>
         <div class="bbb-seal">
           <a

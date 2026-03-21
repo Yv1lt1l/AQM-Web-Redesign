@@ -27,11 +27,6 @@ body {
   font-size: 16px;
 }
 
-#form-result {
-  display: none;
-  margin-top: 1rem;
-}
-
 /* Container */
 .container {
   width: 100%;
