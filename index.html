@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+    default-src 'self';
+    img-src 'self' data: https://*.googleapis.com https://*.gstatic.com https://m.bbb.org;
+    script-src 'self';
+    style-src 'self' 'unsafe-inline' https://*.googleapis.com;
+    font-src 'self' https://*.gstatic.com;
+    frame-src https://www.google.com https://maps.google.com;
+    form-action 'self' https://api.web3forms.com;"
+    />
     <title>Auto Queen Motors | Campbell River</title>
     <!-- Favicons (Update with new logo)-->
     <link
@@ -450,26 +461,6 @@
             />
             <span>BBB RATING: A</span>
           </a>
-        </div>
-        <script
-          defer
-          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-        ></script>
-        <div id="gpt-passback">
-          <script>
-            window.googletag = window.googletag || { cmd: [] };
-            googletag.cmd.push(function () {
-              googletag
-                .defineSlot(
-                  "/21848388897/IABBB-Dynamic-Seal",
-                  [1, 1],
-                  "gpt-passback",
-                )
-                .addService(googletag.pubads());
-              googletag.enableServices();
-              googletag.display("gpt-passback");
-            });
-          </script>
         </div>
       </section>
     </main>

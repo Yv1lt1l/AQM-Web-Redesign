@@ -1,8 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+    default-src 'self';
+    img-src 'self' data: https://*.googleapis.com https://*.gstatic.com https://m.bbb.org;
+    script-src 'self';
+    style-src 'self' 'unsafe-inline' https://*.googleapis.com;
+    font-src 'self' https://*.gstatic.com;
+    frame-src https://www.google.com https://maps.google.com;
+    form-action 'self' https://api.web3forms.com;"
+    />
     <title>Auto Queen Motors | About Us</title>
     <!-- Favicons -->
     <link
@@ -91,9 +102,10 @@
               20 years in the industry , she can definitely help match you with
               the perfect vehicle that fits your needs and budget. If financing
               is needed, she can get that done for you as well. Driven by honest
-              , no – frills gimmicks, Vicki will walk you through the whole
-              process from start to finish to make your buying experience like
-              no other.... fun &amp; enjoyable. Her Google ratings say it all.
+              , no &ndash; frills gimmicks, Vicki will walk you through the
+              whole process from start to finish to make your buying experience
+              like no other.... fun &amp; enjoyable. Her Google ratings say it
+              all.
             </p>
           </div>
         </div>
@@ -112,11 +124,12 @@
           <div class="team-member-info">
             <h3>Zeppelin</h3>
             <p>
-              Zeppelin – Our little mascot. Zepp’s role is to welcome everyone
-              that comes on the lot with his happy bark and wagging tail. If
-              your in need of puppy kisses and cuddles , he’s your guy. He’ll
-              never turn down a treat …..woof woof ( hint hint ) or a belly rub.
-              Stop in and say hi anytime.
+              Zeppelin &ndash; Our little mascot. Zepp&CloseCurlyQuote;s role is
+              to welcome everyone that comes on the lot with his happy bark and
+              wagging tail. If your in need of puppy kisses and cuddles ,
+              he&CloseCurlyQuote;s your guy. He&CloseCurlyQuote;ll never turn
+              down a treat …..woof woof ( hint hint ) or a belly rub. Stop in
+              and say hi anytime.
             </p>
           </div>
           <div class="team-member-photo">
@@ -140,26 +153,6 @@
           />
           <span>BBB RATING: A</span>
         </a>
-      </div>
-      <script
-        defer
-        src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-      ></script>
-      <div id="gpt-passback">
-        <script>
-          window.googletag = window.googletag || { cmd: [] };
-          googletag.cmd.push(function () {
-            googletag
-              .defineSlot(
-                "/21848388897/IABBB-Dynamic-Seal",
-                [1, 1],
-                "gpt-passback"
-              )
-              .addService(googletag.pubads());
-            googletag.enableServices();
-            googletag.display("gpt-passback");
-          });
-        </script>
       </div>
     </main>
 
