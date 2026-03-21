@@ -6,8 +6,8 @@
   --color-accent: #003d66; /* chosen accent—adjust to brand */
   --radius: 8px;
   --container-pad: 1rem;
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial;
+  --font-sans:
+    system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
 /* Reset-ish */
@@ -25,6 +25,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
+}
+
+#form-result {
+  display: none;
+  margin-top: 1rem;
 }
 
 /* Container */
@@ -288,7 +293,9 @@ body {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 }
 
