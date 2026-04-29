@@ -33,6 +33,7 @@ body {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--container-pad);
+  place-items: center;
 }
 
 /* Skip link */
@@ -70,6 +71,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 0;
+  flex-wrap: wrap;
 }
 
 .brand img {
@@ -81,6 +83,8 @@ body {
 .main-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 .nav-toggle {
@@ -125,6 +129,8 @@ body {
   border-radius: 6px;
   border: 1px solid var(--color-accent);
   text-decoration: none;
+  margin-left: auto;
+  white-space: nowrap;
 }
 
 .call-btn small {
@@ -142,6 +148,14 @@ body {
 .hero-inner {
   text-align: center;
   padding: 1rem 0;
+}
+
+.hours-mini {
+  font-size: 0.85rem;
+  color: #555;
+  margin-left: 1rem;
+  padding-right: 1rem;
+  white-space: nowrap;
 }
 
 .hero h1 {
@@ -274,13 +288,14 @@ body {
 .inventory {
   display: grid;
   padding: 1rem 0;
-  justify-content: center;
+  place-items: center;
 }
 
 .cards {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  place-content: center;
 }
 
 .card {
@@ -366,6 +381,26 @@ iframe {
 .contact-grid {
   display: grid;
   gap: 1rem;
+}
+
+.hours-card {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+
+.hours-card h3 {
+  margin-top: 0;
+}
+
+.hours-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hours-card li {
+  padding: 0.2rem 0;
 }
 
 .contact-form label {
@@ -568,7 +603,15 @@ iframe {
 
 /* Tablet adjustments */
 @media screen and (min-width: 600px) and (max-width: 900px) {
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+  }
+
   /* Hero section */
+
   .hero h1 {
     font-size: 1.8rem;
   }
@@ -616,6 +659,38 @@ iframe {
 
 /* Larger screens */
 @media screen and (min-width: 901px) {
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .call-btn {
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .hours-mini {
+    margin-left: 1rem;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    color: #444;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
