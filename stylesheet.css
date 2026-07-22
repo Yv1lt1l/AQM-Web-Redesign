@@ -859,12 +859,18 @@ iframe {
     grid-column: 2;
   }
 
-  .header-right,
-  .header-inner > .call-btn {
+  .header-right {
     grid-column: 1 / -1;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+
+  .header-inner > .call-btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: auto;
+    flex-direction: column;
   }
 
   .call-btn {
@@ -927,7 +933,7 @@ iframe {
   .nav-list {
     position: static;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 0.25rem;
     width: auto;
@@ -943,6 +949,7 @@ iframe {
 
   .nav-list a {
     padding: 0.5rem 0.8rem;
+    white-space: nowrap;
   }
 
   .header-right {
@@ -956,6 +963,9 @@ iframe {
 
   .header-inner > .call-btn {
     flex: 0 0 auto;
+    flex-direction: column;
+    margin-left: auto;
+    white-space: nowrap;
   }
 
   .hours-mini {
