@@ -201,16 +201,16 @@ address {
 .nav-list a {
   display: block;
   padding: 0.7rem 0.85rem;
-  color: #333333;
+  color: #2f7d32;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
   border-radius: var(--radius-sm);
 }
 
 .nav-list a:hover,
 .nav-list a:focus-visible {
-  color: #ffffff;
-  background: var(--color-nav-hover);
+  color: #fff;
+  background-color: #ff6600;
 }
 
 .header-right {
