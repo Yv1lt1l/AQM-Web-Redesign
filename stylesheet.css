@@ -470,8 +470,8 @@ address {
 .card-img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   background: #ffffff;
   transition: transform 0.3s ease;
 }
