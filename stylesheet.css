@@ -826,10 +826,27 @@ iframe {
   margin-top: 0.35rem;
 }
 
+.site-credit {
+  margin: 0.4rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.site-credit a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-credit a:hover,
+.site-credit a:focus-visible {
+  text-decoration: underline;
+}
+
 /* =========================
    Tablet and up
    ========================= */
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
   :root {
     --container-pad: 1.25rem;
   }
@@ -883,7 +900,7 @@ iframe {
 /* =========================
    Desktop
    ========================= */
-@media (min-width: 901px) {
+@media screen and (min-width: 901px) {
   :root {
     --container-pad: 1.5rem;
   }
