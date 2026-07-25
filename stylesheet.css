@@ -827,14 +827,15 @@ iframe {
 }
 
 .site-credit {
-  margin: 0.4rem;
-  font-size: 0.85rem;
+  margin: 0.75rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: #666;
 }
 
 .site-credit a {
   color: var(--color-accent);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
 }
 
