@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="
-    default-src 'self';
-    img-src 'self' data: https://*.googleapis.com https://*.gstatic.com https://m.bbb.org;
-    script-src 'self';
-    style-src 'self' 'unsafe-inline' https://*.googleapis.com;
-    font-src 'self' https://*.gstatic.com;
-    frame-src https://www.google.com https://maps.google.com;
+      content="default-src 'self';
+    script-src 'self' https://web3forms.com https://hcaptcha.com https://*.hcaptcha.com;
+    style-src 'self' 'unsafe-inline' https://*.googleapis.com https://hcaptcha.com https://*.hcaptcha.com;
+    img-src 'self' data: https://*.googleapis.com https://*.gstatic.com https://m.bbb.org https://hcaptcha.com https://*.hcaptcha.com;
+    font-src 'self' https://*.gstatic.com https://hcaptcha.com https://*.hcaptcha.com;
+    frame-src https://www.google.com https://maps.google.com https://hcaptcha.com https://*.hcaptcha.com;
+    connect-src 'self' https://api.web3forms.com https://hcaptcha.com https://*.hcaptcha.com;
     form-action 'self' https://api.web3forms.com;"
     />
     <title>Auto Queen Motors | Attention to Detailing</title>
