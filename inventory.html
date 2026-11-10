@@ -219,6 +219,7 @@
           </address>
           <form
             class="contact-form"
+            id="contact-form"
             action="https://api.web3forms.com/submit"
             method="post"
             aria-label="Contact form"
@@ -230,13 +231,6 @@
               value="36ab05d9-791c-478d-89d1-d3ecedffb8be"
             />
             <!--spam protection-->
-            <input
-              type="text"
-              name="company"
-              style="display: none"
-              tabindex="-1"
-              autocomplete="off"
-            />
             <input
               type="checkbox"
               name="botcheck"
@@ -279,6 +273,8 @@
               value="New contact from Auto Queen Motors website"
             />
 
+            <div class="h-captcha" data-captcha="true"></div>
+
             <button class="btn primary" type="submit">Send Message</button>
           </form>
           <div id="form-result" style="display: none; margin-top: 1rem"></div>
@@ -314,5 +310,6 @@
         10&ndash;4 | Sunday&ndash;Monday Closed
       </div>
     </footer>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
 </html>
