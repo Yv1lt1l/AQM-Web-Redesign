@@ -137,19 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      // Verify hCaptcha before submitting
-      const captchaToken = form
-        .querySelector('[name="h-captcha-response"]')
-        ?.value.trim();
-
-      if (!captchaToken) {
-        result.style.display = "block";
-        result.style.color = "red";
-        result.innerText = "⚠️ Please complete the CAPTCHA verification.";
-
-        return;
-      }
-
       const formData = new FormData(form);
 
       try {
@@ -167,9 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
           result.innerText =
             "✅ Thank you! Your message has been sent successfully.";
           form.reset();
-          if (window.hcaptcha) {
-            window.hcaptcha.reset();
-          }
         } else {
           result.style.display = "block";
           result.style.color = "red";
